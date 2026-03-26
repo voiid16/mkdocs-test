@@ -1,0 +1,122 @@
+/* ===========================================
+   Su and Ivy's Docs — Custom Palette
+   #d8d4d1  Ash       — surface / bg
+   #0f0d0c  Charcoal  — primary text
+   #791a18  Brick     — accent / primary
+   #726a5e  Driftwood — muted text / sidebar
+   #9faa74  Sage      — code / success
+   =========================================== */
+
+@import url("https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Cascadia+Code:wght@400;500&display=swap");
+
+:root {
+  --ash: #d8d4d1;
+  --charcoal: #0f0d0c;
+  --brick: #791a18;
+  --driftwood: #726a5e;
+  --sage: #9faa74;
+}
+
+/* ── Light mode ── */
+[data-md-color-scheme="default"] {
+  --md-primary-fg-color: var(--brick);
+  --md-primary-fg-color--light: #a02422;
+  --md-primary-fg-color--dark: #550f0e;
+  --md-accent-fg-color: var(--brick);
+
+  --md-default-bg-color: #f5f2ef;
+  --md-default-fg-color: var(--charcoal);
+  --md-default-fg-color--light: var(--driftwood);
+  --md-default-fg-color--lighter: #a09a92;
+
+  --md-typeset-a-color: var(--brick);
+  --md-code-bg-color: #eae7e3;
+  --md-code-fg-color: #3a3530;
+
+  --md-nav-bg: var(--ash);
+}
+
+/* ── Dark mode ── */
+[data-md-color-scheme="slate"] {
+  --md-primary-fg-color: var(--brick);
+  --md-primary-fg-color--light: #a02422;
+  --md-primary-fg-color--dark: #550f0e;
+  --md-accent-fg-color: var(--sage);
+
+  --md-default-bg-color: #1a1614;
+  --md-default-fg-color: var(--ash);
+  --md-default-fg-color--light: var(--driftwood);
+  --md-default-fg-color--lighter: #4a4540;
+
+  --md-typeset-a-color: var(--sage);
+  --md-code-bg-color: #0f0d0c;
+  --md-code-fg-color: var(--sage);
+}
+
+/* ── Header ── */
+.md-header {
+  background-color: var(--charcoal);
+  color: var(--ash);
+}
+
+.md-header__title {
+  color: var(--ash);
+}
+
+/* ── Tabs ── */
+.md-tabs {
+  background-color: #1e1a18;
+}
+
+/* ── Sidebar ── */
+[data-md-color-scheme="default"] .md-sidebar--primary {
+  background-color: var(--ash);
+}
+
+[data-md-color-scheme="slate"] .md-sidebar--primary {
+  background-color: #150f0e;
+}
+
+/* ── Active nav item ── */
+.md-nav__item--active > .md-nav__link {
+  color: var(--brick) !important;
+  font-weight: 600;
+}
+
+[data-md-color-scheme="slate"] .md-nav__item--active > .md-nav__link {
+  color: var(--sage) !important;
+}
+
+/* ── Table headers ── */
+.md-typeset table:not([class]) th {
+  background-color: var(--charcoal);
+  color: var(--ash);
+}
+
+/* ── Admonition — danger uses brick ── */
+.md-typeset .admonition.danger,
+.md-typeset details.danger {
+  border-color: var(--brick);
+}
+.md-typeset .danger > .admonition-title,
+.md-typeset .danger > summary {
+  background-color: rgba(121, 26, 24, 0.12);
+}
+.md-typeset .danger > .admonition-title::before,
+.md-typeset .danger > summary::before {
+  background-color: var(--brick);
+}
+
+/* ── Admonition — tip uses sage ── */
+.md-typeset .admonition.tip,
+.md-typeset details.tip {
+  border-color: var(--sage);
+}
+.md-typeset .tip > .admonition-title,
+.md-typeset .tip > summary {
+  background-color: rgba(159, 170, 116, 0.12);
+}
+.md-typeset .tip > .admonition-title::before,
+.md-typeset .tip > summary::before {
+  background-color: var(--sage);
+}
