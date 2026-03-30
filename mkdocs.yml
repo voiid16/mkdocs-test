@@ -35,7 +35,7 @@ nav:
   - Task 2: Task2.md
   - Task 3: Task3.md
   - Task 4: Task4.md
-  - Troubleshooting: troubleshooting.md
+  - Troubleshooting: TroubleShooting.md
   - Glossary: glossary.md
 
 extra_css:
@@ -57,3 +57,4 @@ markdown_extensions:
       slugify: !!python/object/apply:pymdownx.slugs.slugify
         kwds:
           case: lower
+  - admonition
