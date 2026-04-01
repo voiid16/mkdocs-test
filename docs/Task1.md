@@ -24,7 +24,9 @@ By the end of this section, you will know how to send a real HTTP request and un
 
 This section covers Steps 1–6: creating the request, choosing the method, entering the URL, and configuring the params, body, and headers.
 
-### Step 1 — Create a New Request
+---
+
+**Step 1 — Create a New Request**
 
 1. Open the **Postman desktop app**.
 2. Click the **+** button at the top of the screen to open a new tab.
@@ -38,7 +40,7 @@ This section covers Steps 1–6: creating the request, choosing the method, ente
 
 ---
 
-### Step 2 — Set the Method to GET
+**Step 2 — Set the Method to GET**
 
 1. Find the **method dropdown** on the left side of the URL bar.
 2. By default, Postman sets every new request to **GET**.
@@ -58,7 +60,7 @@ This section covers Steps 1–6: creating the request, choosing the method, ente
 
 ---
 
-### Step 3 — Enter the URL
+**Step 3 — Enter the URL**
 
 1. Click the **URL bar** (it shows placeholder text like _Enter URL or paste text_).
 2. Type the following URL:
@@ -75,7 +77,7 @@ This section covers Steps 1–6: creating the request, choosing the method, ente
 
 ---
 
-### Step 4 — Add Query Parameters
+**Step 4 — Add Query Parameters**
 
 Query parameters let you pass extra information along with your request. They appear at the end of a URL, after a `?`:
 
@@ -105,7 +107,7 @@ Instead of typing parameters directly into the URL, use the **Params** tab. Post
 
 ---
 
-### Step 5 — Check the Request Body
+**Step 5 — Check the Request Body**
 
 1. Click the **Body** tab below the URL bar.
 2. Confirm **none** is selected.
@@ -119,7 +121,7 @@ Instead of typing parameters directly into the URL, use the **Params** tab. Post
 
 ---
 
-### Step 6 — Add a Request Header
+**Step 6 — Add a Request**
 
 Headers give the server extra information about your request — for example, what format you want the response in.
 
@@ -144,7 +146,9 @@ Headers give the server extra information about your request — for example, wh
 
 This section covers Steps 7–8: sending the request and reading what comes back.
 
-### Step 7 — Send the Request
+---
+
+**Step 7 — Send the Request**
 
 1. Click the blue **Send** button on the right side of the URL bar.
 2. Postman sends the request to `https://postman-echo.com/get?foo1=bar1&foo2=bar2`.
@@ -155,7 +159,7 @@ This section covers Steps 7–8: sending the request and reading what comes back
 
 ---
 
-### Step 8 — Read the Response
+**Step 8 — Read the Response**
 
 After you click Send, the **Response** panel appears at the bottom of the screen. Check the **status code** first, then the **body**.
 
@@ -168,12 +172,11 @@ Look at the top of the response panel. You should see:
 
 This means the request worked. The server received your request and sent data back.
 
-![Response panel showing 200 OK](assets/task1_send_request/step8_200OK.png)
+<!-- ![Response panel showing 200 OK](assets/task1_send_request/step8_200OK.png) -->
 <!-- *The status code appears at the top of the response panel. 200 OK means success.* -->
 
-
-!!! success
-    If you see `200 OK`, your request worked correctly. Move on to read the response body below.
+<!-- !!! success
+    If you see `200 OK`, your request worked correctly. Move on to read the response body below. -->
 
 !!! info "Common status codes"
     | Code | Meaning |
@@ -210,14 +213,14 @@ This means the request worked. The server received your request and sent data ba
 
 
 
-!!! success "What does this mean?"
+<!-- !!! success "What does this mean?"
     | Field | What it shows |
     |-------|--------------|
     | `args` | The query parameters you sent: `foo1` and `foo2` |
     | `headers` | The headers your request included, including `Accept` |
     | `url` | The full URL of your request |
 
-If you see `"foo1": "bar1"` and `"foo2": "bar2"` inside `args`, everything worked correctly.
+If you see `"foo1": "bar1"` and `"foo2": "bar2"` inside `args`, everything worked correctly. -->
 
 <!-- **Other Response Tabs**
 
@@ -232,7 +235,7 @@ If you see `"foo1": "bar1"` and `"foo2": "bar2"` inside `args`, everything worke
 
 ## Save the Request
 
-### Step 9 — Save the Request
+**Step 9 — Save the Request**
 
 Saving lets you open and resend the request any time without setting it up again.
 
