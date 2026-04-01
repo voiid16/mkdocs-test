@@ -1,157 +1,271 @@
-# Code Blocks
+# Sending a GET Request
 
-Material for MkDocs renders beautiful, feature-rich code blocks out of the box.
-With a few extensions enabled you get syntax highlighting, line numbers, annotations, and copy buttons.
+## Overview
 
-## Configuration
+In this section, you will send a GET request to the [**Postman Echo**](https://postman-echo.com/) API.
 
-```yaml
-theme:
-  features:
-    - content.code.copy # adds a copy button to every block
-    - content.code.annotate # enables inline annotations
+This section is organized into three parts:
 
-markdown_extensions:
-  - pymdownx.highlight:
-      anchor_linenums: true
-      line_spans: __span
-      pygments_lang_class: true
-  - pymdownx.inlinehilite
-  - pymdownx.superfences
-```
+- **Build the Request** — Create a new request, set the method, enter the URL, and configure the query parameters, body, and headers (Steps 1–6).
+- **Send & Review** — Send the request and read the response (Steps 7–8).
+- **Save the Request** — Save the request to a collection for future use (Step 9).
+
+By the end of this section, you will know how to send a real HTTP request and understand what the response tells you.
+
+!!! info "What is a GET request?"
+    A GET request asks a server to **send you data**. It is the most common type of HTTP request — like asking a website to show you a page.
+
+!!! info "What is Postman Echo?"
+    Postman Echo is a simple API provided by Postman for testing HTTP requests.
 
 ---
 
-## Basic Fenced Code Block
+## Build the Request
 
-Wrap code in triple backticks and add a language identifier for syntax highlighting.
-[Pygments](https://pygments.org/languages/) supports 500+ languages.
+This section covers Steps 1–6: creating the request, choosing the method, entering the URL, and configuring the params, body, and headers.
 
-````markdown
-```python
-def greet(name: str) -> str:
-    return f"Hello, {name}!"
+### Step 1 — Create a New Request
 
-print(greet("world"))
-```
-````
+1. Open the **Postman desktop app**.
+2. Click the **+** button at the top of the screen to open a new tab.
+3. A blank request editor opens.
 
-**Result:**
+<!-- *Click the + button at the top of the Postman workspace to open a new request tab.* -->
+![Click the + button to open a new tab](assets/task1_send_request/step1_newtab.png)
 
-```python
-def greet(name: str) -> str:
-    return f"Hello, {name}!"
-
-print(greet("world"))
-```
+!!! info
+    You can also press ++ctrl+t++ (Windows / Linux) or ++cmd+t++ (macOS) to open a new tab.
 
 ---
 
-## Adding a Title
+### Step 2 — Set the Method to GET
 
-Use the `title` attribute to label your code block — useful for showing a filename.
+1. Find the **method dropdown** on the left side of the URL bar.
+2. By default, Postman sets every new request to **GET**.
+3. Confirm it shows **GET**. If not, click the dropdown and select **GET**.
 
-````markdown
-```yaml title="mkdocs.yml"
-site_name: Su and Ivy's docs
-theme:
-  name: material
-```
-````
+<!-- *The method dropdown is on the left side of the URL bar. Confirm it shows GET.* -->
+![Method dropdown showing GET selected](assets/task1_send_request/step2_get.png)
 
-**Result:**
-
-```yaml title="mkdocs.yml"
-site_name: Su and Ivy's docs
-theme:
-  name: material
-```
+!!! info "Common HTTP methods"
+    | Method | What it does |
+    |--------|-------------|
+    | **GET** | Retrieve data from the server |
+    | **POST** | Send new data to the server |
+    | **PUT** | Replace existing data |
+    | **PATCH** | Update part of existing data |
+    | **DELETE** | Remove data |
 
 ---
 
-## Line Numbers
+### Step 3 — Enter the URL
 
-Add `linenums="1"` to start numbering from line 1 (or any other number).
+1. Click the **URL bar** (it shows placeholder text like _Enter URL or paste text_).
+2. Type the following URL:
 
-````markdown
-```python linenums="1"
-import httpx
+   ```
+   https://postman-echo.com/get
+   ```
 
-response = httpx.get("https://api.example.com/v1/users")
-print(response.json())
-```
-````
+<!-- *Type the base URL into the address bar. Do not add query parameters yet.* -->
+![URL bar with address typed in](assets/task1_send_request/step3_url.png)
 
-**Result:**
-
-```python linenums="1"
-import httpx
-
-response = httpx.get("https://api.example.com/v1/users")
-print(response.json())
-```
+<!-- !!! warning
+    Do **not** add `?foo1=bar1&foo2=bar2` to the URL yet. You will add query parameters in Step 4 using the Params tab instead. This keeps your request easier to manage. -->
 
 ---
 
-## Highlighting Lines
+### Step 4 — Add Query Parameters
 
-Use `hl_lines` to draw attention to specific lines.
+Query parameters let you pass extra information along with your request. They appear at the end of a URL, after a `?`:
 
-````markdown
-```python linenums="1" hl_lines="2 3"
-def connect(host: str, port: int):
-    if port not in (80, 443):
-        raise ValueError(f"Unsupported port: {port}")
-    return f"Connected to {host}:{port}"
 ```
-````
-
-**Result:**
-
-```python linenums="1" hl_lines="2 3"
-def connect(host: str, port: int):
-    if port not in (80, 443):
-        raise ValueError(f"Unsupported port: {port}")
-    return f"Connected to {host}:{port}"
+https://postman-echo.com/get?foo1=bar1&foo2=bar2
 ```
+
+Instead of typing parameters directly into the URL, use the **Params** tab. Postman updates the URL automatically.
+
+1. Click the **Params** tab below the URL bar.
+2. In the first empty row, enter:
+   - **Key:** `foo1`
+   - **Value:** `bar1`
+3. In the next row, enter:
+   - **Key:** `foo2`
+   - **Value:** `bar2`
+4. Look at the URL bar — it now shows:
+   ```
+   https://postman-echo.com/get?foo1=bar1&foo2=bar2
+   ```
+
+<!-- *Add key-value pairs in the Params tab. Postman builds the URL for you.* -->
+![Params tab with two rows filled in](assets/task1_send_request/step4_params.png)
+
+!!! info
+    Each row in the Params tab has a **checkbox**. When a checkbox is unchecked, that parameter is not sent. This is useful for testing with and without a parameter without deleting it.
 
 ---
 
-## Inline Code Highlighting
+### Step 5 — Check the Request Body
 
-With `pymdownx.inlinehilite` you can highlight inline snippets:
+1. Click the **Body** tab below the URL bar.
+2. Confirm **none** is selected.
+3. Leave it as is — no body is needed for this request.
 
-```markdown
-Use `#!python print("hello")` to output text, or `#!bash export KEY=value` to set env vars.
-```
+<!-- *For GET requests, the body should always be set to none.* -->
+![Body tab set to none](assets/task1_send_request/step5_bodynone.png)
 
-**Result:** Use `#!python print("hello")` to output text, or `#!bash export KEY=value` to set env vars.
+!!! info
+    GET requests do not send a body. Body data is used with **POST**, **PUT**, and **PATCH** requests when you need to send data to the server — for example, a new user's name and email in JSON format.
 
 ---
 
-## Code Annotations
+### Step 6 — Add a Request Header
 
-Annotations let you attach explanatory notes to specific lines. Add `# (1)` markers
-in the code, then list the explanations below with `1.`.
+Headers give the server extra information about your request — for example, what format you want the response in.
 
-````markdown
-```yaml
-theme:
-  name: material
-  features:
-    - content.code.copy # (1)!
+1. Click the **Headers** tab below the URL bar.
+2. You will see some headers already listed in grey. These are added automatically by Postman and are always sent.
+3. In the first empty row, add:
+   - **Key:** `Accept`
+   - **Value:** `application/json`、
+
+<!-- *Add the Accept header in the Headers tab. Postman auto-fills suggestions as you type.* -->
+![Headers tab with Accept header added](assets/task1_send_request/step6_header.png)
+
+!!! info
+    The `Accept` header tells the server that you want the response in **JSON** format.
+
+!!! info
+    As you type in the Key field, Postman shows suggestions like `Content-Type` and `Accept`. Click a suggestion to fill it in automatically.
+
+---
+
+## Send & Review
+
+This section covers Steps 7–8: sending the request and reading what comes back.
+
+### Step 7 — Send the Request
+
+1. Click the blue **Send** button on the right side of the URL bar.
+2. Postman sends the request to `https://postman-echo.com/get?foo1=bar1&foo2=bar2`.
+3. Wait a moment — the response appears in the bottom half of the screen.
+
+<!-- *Click the blue Send button. Postman sends your request to the server.* -->
+![The blue Send button on the right of the URL bar](assets/task1_send_request/step8_200OK.png)
+
+---
+
+### Step 8 — Read the Response
+
+After you click Send, the **Response** panel appears at the bottom of the screen. Check the **status code** first, then the **body**.
+
+<!-- **Status Code** -->
+Look at the top of the response panel. You should see:
+
+```
+200 OK
 ```
 
-1. Adds a one-click copy button to every code block on the page.
-````
+This means the request worked. The server received your request and sent data back.
 
-**Result:**
+![Response panel showing 200 OK](assets/task1_send_request/step8_200OK.png)
+<!-- *The status code appears at the top of the response panel. 200 OK means success.* -->
 
-```yaml
-theme:
-  name: material
-  features:
-    - content.code.copy # (1)!
-```
 
-1. Adds a one-click copy button to every code block on the page.
+!!! success
+    If you see `200 OK`, your request worked correctly. Move on to read the response body below.
+
+!!! info "Common status codes"
+    | Code | Meaning |
+    |------|---------|
+    | **200** | OK — the request worked |
+    | **400** | Bad Request — something is wrong with your request |
+    | **401** | Unauthorized — you need to provide credentials |
+    | **404** | Not Found — the URL does not exist |
+    | **500** | Server Error — something went wrong on the server |
+
+    Hover over the status code in Postman to read a short description of what it means.
+
+**Response Body**
+
+1. In the **Response** panel (bottom half of the screen), click the **Body** tab.
+2. You should see JSON data like this:
+
+   ```json
+   {
+     "args": {
+       "foo1": "bar1",
+       "foo2": "bar2"
+     },
+     "headers": {
+       "host": "postman-echo.com",
+       "accept": "application/json"
+     },
+     "url": "https://postman-echo.com/get?foo1=bar1&foo2=bar2"
+   }
+   ```
+
+![Response body tab showing JSON data](assets/task1_send_request/step8_200OK.png)
+<!-- *Click the Body tab in the response panel to see the data the server sent back.* -->
+
+
+
+!!! success "What does this mean?"
+    | Field | What it shows |
+    |-------|--------------|
+    | `args` | The query parameters you sent: `foo1` and `foo2` |
+    | `headers` | The headers your request included, including `Accept` |
+    | `url` | The full URL of your request |
+
+If you see `"foo1": "bar1"` and `"foo2": "bar2"` inside `args`, everything worked correctly.
+
+<!-- **Other Response Tabs**
+
+| Tab              | What it shows                               |
+| ---------------- | ------------------------------------------- |
+| **Body**         | The data the server sent back               |
+| **Cookies**      | Any cookies returned by the server          |
+| **Headers**      | Response headers sent by the server         |
+| **Test Results** | Pass/fail results if you added test scripts | -->
+
+---
+
+## Save the Request
+
+### Step 9 — Save the Request
+
+Saving lets you open and resend the request any time without setting it up again.
+
+1. Click the **Save** button at the top right of the request editor, or press ++ctrl+s++ (Windows / Linux) or ++cmd+s++ (macOS).
+2. A **Save Request** dialog opens.
+![Save button at the top right of the request tab](assets/task1_send_request/step9_save.png)
+<!-- *Click Save or press Ctrl+S / Cmd+S to open the Save Request dialog.* -->
+
+3. Fill in the details:
+   - **Request name:** `GET - Query Params`
+   - **Collection:** Click **New Collection**, name it `My First Collection`, and click **Create**. Or select an existing collection.
+4. Click **Save**.
+
+![Save Request dialog with name and collection fields](assets/task1_send_request/step9_newcollection.png)
+<!-- *Enter a name for the request and choose a collection to save it in.* -->
+
+Your request now appears in the left sidebar under your collection. Click it any time to reload it.
+
+!!! info "What is a Collection?"
+    A collection is a folder that holds related requests together.
+    You can organize, share, and run all requests in a collection at once.
+
+---
+
+## Conclusion
+
+By the end of this section, you will have successfully learned the following:
+
+- How to create and configure a GET request in Postman.
+- How to add query parameters, headers, and check the body.
+- How to read and understand the server response.
+- How to save a request to a collection.
+
+Congratulations! You sent your first API request!
+
+---
