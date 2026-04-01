@@ -1,130 +1,128 @@
-# Content Tabs
+# Task 2 — Using Environment Variables in Postman
 
-Content tabs let you group related content under selectable labels — ideal for showing
-the same instructions in multiple languages, or comparing alternative approaches side by side.
+## Overview
 
-## Configuration
+Environment variables allow you to store and reuse values across multiple requests without hardcoding them directly into your API calls. This is especially useful when working with base URLs, API keys, or user credentials that may change between environments such as development, staging, and production.
 
-```yaml
-markdown_extensions:
-  - pymdownx.tabbed:
-      alternate_style: true # required for the modern tab style
-  - pymdownx.superfences # needed for code blocks inside tabs
-```
+This task walks you through creating an environment, defining variables, and referencing them inside requests.
 
 ---
 
-## Basic Tabs
+## Setting Up Environment Variables
 
-Wrap tab content with `=== "Label"` blocks. Indentation must be consistent (4 spaces).
+1. In the left sidebar, click **Environments** to open the environment management panel.
 
-```markdown
-=== "Python"
-`python
-    import httpx
-    response = httpx.get("https://api.example.com/v1/users")
-    `
+    ![Postman UI](images/Task2/navigate_to_environment.jpg)
 
-=== "JavaScript"
-`js
-    const res = await fetch("https://api.example.com/v1/users");
-    const data = await res.json();
-    `
+2. Click the **+** icon to create a new environment collection.
 
-=== "cURL"
-`bash
-    curl https://api.example.com/v1/users \
-      -H "Authorization: Bearer $TOKEN"
-    `
-```
+    ![Postman UI](images/Task2/create_an_environment.jpg)
 
-**Result:**
+3. Enter a descriptive name for your environment (e.g., `Postman Example Env`).
 
-=== "Python"
-`python
-    import httpx
-    response = httpx.get("https://api.example.com/v1/users")
-    `
+    ![Postman UI](images/Task2/setup_environment.jpg)
 
-=== "JavaScript"
-`js
-    const res = await fetch("https://api.example.com/v1/users");
-    const data = await res.json();
-    `
+4. Add your variables by filling in the **Variable** and **Initial Value** columns. For example:
 
-=== "cURL"
-`bash
-    curl https://api.example.com/v1/users \
-      -H "Authorization: Bearer $TOKEN"
-    `
+    | Variable    | Value                        |
+    |-------------|------------------------------|
+    | `url`       | `https://postman-echo.com`   |
+    | `api_key`   | `myAPIKey`                   |
+    | `user_name` | `myName`                     |
+    | `user_role` | `Developer`                  |
+
+    ![Postman UI](images/Task2/add_variable.jpg)
+
+5. Optionally, assign a tag color to your environment for easier identification when switching between multiple environments.
+
+    ![Postman UI](images/Task2/add_tag.jpg)
+
+With this step completed, your environment is now fully configured.  
+You have successfully created an Environment, added variables, and customized its appearance for easier identification.
+
+Next, let’s explore how to use these environment variables inside your requests.
+
 
 ---
 
-## Tabs with Text and Lists
+## Using Environment Variables in Requests
+1. Click the **New** button on the right-hand side of the **My Workspace** top bar.
 
-Tab content isn't limited to code — you can include any Markdown inside a tab.
+    ![Postman UI](images/Task2/click_new.jpg)
 
-```markdown
-=== ":material-apple: macOS"
-Install via Homebrew:
+2. In the dialog that appears, select **HTTP** to create a new HTTP request.
 
-    1. Open Terminal
-    2. Run `brew install mkdocs`
-    3. Verify with `mkdocs --version`
+    ![Postman UI](images/Task2/create_request.jpg)
 
-=== ":material-linux: Linux"
-Install via pip:
+3. In the top-right dropdown, select the environment you created (e.g., `Postman Example Env`). Postman will resolve all `{{variable}}` references using the values defined in that environment.
 
-    1. Ensure Python 3.8+ is installed
-    2. Run `pip install mkdocs-material`
-    3. Verify with `mkdocs --version`
+    ![Postman UI](images/Task2/choose_environment.jpg)
 
-=== ":material-microsoft-windows: Windows"
-Install via pip in PowerShell:
+    !!! warning
+        If no environment is selected, Postman will not resolve any `{{variable}}` references and the raw placeholder text will be sent in the request instead.
 
-    1. Ensure Python 3.8+ is installed
-    2. Run `pip install mkdocs-material`
-    3. Verify with `mkdocs --version`
+4. In the URL field, enter the following using the `{{variable_name}}` syntax:
+```
+{{url}}/get
 ```
 
-**Result:**
+    Click **Send**. Postman will substitute `{{url}}` with `https://postman-echo.com` before sending the request. You can confirm the request was sent successfully by the `200 OK` status shown in the response panel.
 
-=== ":material-apple: macOS"
-Install via Homebrew:
+    ![Postman UI](images/Task2/setup_in_request.jpg)
+    !!! warning
+        If the variable is not resolved, double-check that the name inside `{{ }}` exactly matches the variable key defined in your environment, including spelling, capitalization, and special characters (e.g., `{{url}}` and `{{Url}}` are treated as different variables).
 
-    1. Open Terminal
-    2. Run `brew install mkdocs`
-    3. Verify with `mkdocs --version`
+5. Navigate to the **Headers** tab. Set the **Key** to `x-api-key` and the **Value** to `{{api_key}}`. Click **Send**.
 
-=== ":material-linux: Linux"
-Install via pip:
+    ![Postman UI](images/Task2/set_header.jpg)
 
-    1. Ensure Python 3.8+ is installed
-    2. Run `pip install mkdocs-material`
-    3. Verify with `mkdocs --version`
+6. In the response panel, locate the `x-api-key` field and confirm it contains the value you defined in your environment variable.
 
-=== ":material-microsoft-windows: Windows"
-Install via pip in PowerShell:
+    ![Postman UI](images/Task2/get_header_result.jpg)
 
-    1. Ensure Python 3.8+ is installed
-    2. Run `pip install mkdocs-material`
-    3. Verify with `mkdocs --version`
+    !!! note
+        The `{{variable_name}}` syntax works in any field in Postman — URLs, headers, query parameters, and request bodies.
 
+7. Switch the HTTP method to **POST** by clicking the method dropdown on the left of the URL bar and selecting **POST**. Then enter the following in the URL field:
+```
+{{url}}/post
+```
+
+    ![Postman UI](images/Task2/post_request_setup.jpg)
+
+8. In the **Body** tab, click the left dropdown and select **raw**, then click the right dropdown and select **JSON**.
+
+    ![Postman UI](images/Task2/setup_body_json.jpg)
+
+9. Paste the following JSON into the body input field:
+```json
+{
+  "username": "{{user_name}}",
+  "role": "{{user_role}}"
+}
+```
+
+    ![Postman UI](images/Task2/post_request_json.jpg)
+
+10. Click **Send**. In the response panel, locate the `data` field and confirm that the environment variables have been resolved to their corresponding values:
+```json
+"data": {
+    "username": "myName",
+    "role": "Developer"
+}
+```
+
+    ![Postman UI](images/Task2/post_result.jpg)
+
+    !!! success
+        Seeing your variable values reflected in the `data` field of the response confirms that Postman is correctly resolving environment variables in the POST request body.
 ---
 
-## Linked Tabs
+## Outcome
 
-By default, all tab groups on a page switch independently. To sync tabs with the same
-label across the whole page, add `slugify` to your config:
+After completing this task, you should be able to:
 
-```yaml
-markdown_extensions:
-  - pymdownx.tabbed:
-      alternate_style: true
-      slugify: !!python/object/apply:pymdownx.slugs.slugify
-        kwds:
-          case: lower
-```
+- **Create and configure an environment** in Postman with custom variable and value pairs
+- **Reference environment variables** using the `{{variable_name}}` syntax across URLs, headers, and request bodies
 
-When a reader selects "Python" in one group, every other tab group on the page
-that has a "Python" tab will switch to it automatically.
+Environment variables are one of the most practical features in Postman. As your projects grow, centralizing configuration in environments will save time and reduce errors when managing multiple APIs or deployment targets.
