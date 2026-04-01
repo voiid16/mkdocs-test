@@ -69,13 +69,13 @@
 }
 
 /* ── Sidebar ── */
-[data-md-color-scheme="default"] .md-sidebar--primary {
+/* [data-md-color-scheme="default"] .md-sidebar--primary {
   background-color: var(--ash);
 }
 
 [data-md-color-scheme="slate"] .md-sidebar--primary {
   background-color: #150f0e;
-}
+} */
 
 /* ── Active nav item ── */
 .md-nav__item--active > .md-nav__link {
