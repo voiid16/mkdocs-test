@@ -7,14 +7,71 @@
    #9faa74  Sage      — code / success
    =========================================== */
 
-@import url("https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=Cascadia+Code:wght@400;500&display=swap");
-
 :root {
   --ash: #d8d4d1;
   --charcoal: #0f0d0c;
   --brick: #791a18;
   --driftwood: #726a5e;
   --sage: #9faa74;
+  --font-stack:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue",
+    Arial, sans-serif;
+  --code-font-stack: "Courier New", Courier, monospace;
+}
+
+/* ── Default Fonts ── */
+body,
+.md-typeset {
+  font-family: var(--font-stack);
+}
+
+code,
+.md-typeset code,
+.md-typeset pre {
+  font-family: var(--code-font-stack);
+}
+
+/* ── Heading Font Sizes ── */
+.md-typeset h1 {
+  font-size: 2rem;
+  line-height: 1.3;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.md-typeset h2 {
+  font-size: 1.75rem;
+  line-height: 1.3;
+  margin-top: 1.4rem;
+  margin-bottom: 0.9rem;
+}
+
+.md-typeset h3 {
+  font-size: 1.5rem;
+  line-height: 1.3;
+  margin-top: 1.3rem;
+  margin-bottom: 0.8rem;
+}
+
+.md-typeset h4 {
+  font-size: 1.25rem;
+  line-height: 1.3;
+  margin-top: 1.2rem;
+  margin-bottom: 0.7rem;
+}
+
+.md-typeset h5 {
+  font-size: 1.1rem;
+  line-height: 1.3;
+  margin-top: 1rem;
+  margin-bottom: 0.6rem;
+}
+
+.md-typeset h6 {
+  font-size: 1rem;
+  line-height: 1.3;
+  margin-top: 0.9rem;
+  margin-bottom: 0.5rem;
 }
 
 /* ── Light mode ── */
@@ -107,6 +164,22 @@
   background-color: var(--brick);
 }
 
+/* ── Admonition — note uses driftwood ── */
+.md-typeset .admonition.note,
+.md-typeset details.note {
+  border-color: var(--driftwood);
+}
+
+.md-typeset .note > .admonition-title,
+.md-typeset .note > summary {
+  background-color: rgba(114, 106, 94, 0.12);
+}
+
+.md-typeset .note > .admonition-title::before,
+.md-typeset .note > summary::before {
+  background-color: var(--driftwood);
+}
+
 /* ── Admonition — tip uses sage ── */
 .md-typeset .admonition.tip,
 .md-typeset details.tip {
@@ -119,4 +192,36 @@
 .md-typeset .tip > .admonition-title::before,
 .md-typeset .tip > summary::before {
   background-color: var(--sage);
+}
+
+/* ── Hide site name in sidebar ── */
+.md-nav--primary .md-nav__title[for="__drawer"] {
+  display: none;
+}
+
+/* ── Nav font size & spacing ── */
+.md-nav--primary .md-nav__link {
+  font-size: 0.8rem;
+  padding-top: 0.1rem;
+  padding-bottom: 0.1rem;
+  line-height: 1.4;
+  letter-spacing: 0.01em;
+}
+
+/* ── Top-level nav items slightly bolder ── */
+.md-nav--primary > .md-nav__list > .md-nav__item > .md-nav__link {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--driftwood);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+/* ── Dark mode top-level nav ── */
+[data-md-color-scheme="slate"]
+  .md-nav--primary
+  > .md-nav__list
+  > .md-nav__item
+  > .md-nav__link {
+  color: var(--ash);
 }

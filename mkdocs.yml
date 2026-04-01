@@ -31,7 +31,7 @@ theme:
 
 nav:
   - Home: index.md
-  - Task 1: Task1.md
+  - Sending a GET Request: Task1.md
   - Task 2: Task2.md
   - Task 3: Task3.md
   - Task 4: Task4.md
@@ -58,3 +58,6 @@ markdown_extensions:
         kwds:
           case: lower
   - admonition
+  - pymdownx.keys
+
+docs_dir: docs
