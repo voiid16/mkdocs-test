@@ -109,7 +109,7 @@ If a collection runner fails or a request behaves unexpectedly, the issue may be
 
 ---
 
-## Outcome
+## Conclusion
 
 After completing this task, you should be able to:
 
