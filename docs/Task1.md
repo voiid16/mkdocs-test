@@ -33,7 +33,7 @@ This section covers Steps 1–6: creating the request, choosing the method, ente
 3. A blank request editor opens.
 
 <!-- *Click the + button at the top of the Postman workspace to open a new request tab.* -->
-![Click the + button to open a new tab](assets/task1_send_request/step1_newtab.png)
+![Click the + button to open a new tab](assets/task1_send_request/step1_newtab.png "Click the + button to open a new tab")
 
 !!! info
     You can also press ++ctrl+t++ (Windows / Linux) or ++cmd+t++ (macOS) to open a new tab.
@@ -47,7 +47,7 @@ This section covers Steps 1–6: creating the request, choosing the method, ente
 3. Confirm it shows **GET**. If not, click the dropdown and select **GET**.
 
 <!-- *The method dropdown is on the left side of the URL bar. Confirm it shows GET.* -->
-![Method dropdown showing GET selected](assets/task1_send_request/step2_get.png)
+![Method dropdown showing GET selected](assets/task1_send_request/step2_get.png "Method dropdown showing GET selected")
 
 !!! info "Common HTTP methods"
     | Method | What it does |
@@ -70,7 +70,7 @@ This section covers Steps 1–6: creating the request, choosing the method, ente
    ```
 
 <!-- *Type the base URL into the address bar. Do not add query parameters yet.* -->
-![URL bar with address typed in](assets/task1_send_request/step3_url.png)
+![URL bar with address typed in](assets/task1_send_request/step3_url.png "URL bar with address typed in")
 
 <!-- !!! warning
     Do **not** add `?foo1=bar1&foo2=bar2` to the URL yet. You will add query parameters in Step 4 using the Params tab instead. This keeps your request easier to manage. -->
@@ -89,18 +89,18 @@ Instead of typing parameters directly into the URL, use the **Params** tab. Post
 
 1. Click the **Params** tab below the URL bar.
 2. In the first empty row, enter:
-   - **Key:** `foo1`
-   - **Value:** `bar1`
+    - **Key:** `foo1`
+    - **Value:** `bar1`
 3. In the next row, enter:
-   - **Key:** `foo2`
-   - **Value:** `bar2`
+    - **Key:** `foo2`
+    - **Value:** `bar2`
 4. Look at the URL bar — it now shows:
    ```
    https://postman-echo.com/get?foo1=bar1&foo2=bar2
    ```
 
 <!-- *Add key-value pairs in the Params tab. Postman builds the URL for you.* -->
-![Params tab with two rows filled in](assets/task1_send_request/step4_params.png)
+![Params tab with two rows filled in](assets/task1_send_request/step4_params.png "Params tab with two rows filled in")
 
 !!! info
     Each row in the Params tab has a **checkbox**. When a checkbox is unchecked, that parameter is not sent. This is useful for testing with and without a parameter without deleting it.
@@ -111,10 +111,10 @@ Instead of typing parameters directly into the URL, use the **Params** tab. Post
 
 1. Click the **Body** tab below the URL bar.
 2. Confirm **none** is selected.
-3. Leave it as is — no body is needed for this request.
+3. Leave the request body as empty.
 
 <!-- *For GET requests, the body should always be set to none.* -->
-![Body tab set to none](assets/task1_send_request/step5_bodynone.png)
+![Body tab set to none](assets/task1_send_request/step5_bodynone.png "Body tab set to none")
 
 !!! info
     GET requests do not send a body. Body data is used with **POST**, **PUT**, and **PATCH** requests when you need to send data to the server — for example, a new user's name and email in JSON format.
@@ -128,11 +128,11 @@ Headers give the server extra information about your request — for example, wh
 1. Click the **Headers** tab below the URL bar.
 2. You will see some headers already listed in grey. These are added automatically by Postman and are always sent.
 3. In the first empty row, add:
-   - **Key:** `Accept`
-   - **Value:** `application/json`、
+    - **Key:** `Accept`
+    - **Value:** `application/json`
 
 <!-- *Add the Accept header in the Headers tab. Postman auto-fills suggestions as you type.* -->
-![Headers tab with Accept header added](assets/task1_send_request/step6_header.png)
+![Headers tab with Accept header added](assets/task1_send_request/step6_header.png "Headers tab with Accept header added")
 
 !!! info
     The `Accept` header tells the server that you want the response in **JSON** format.
@@ -155,7 +155,7 @@ This section covers Steps 1–2: sending the request and reading what comes back
 3. Wait a moment — the response appears in the bottom half of the screen.
 
 <!-- *Click the blue Send button. Postman sends your request to the server.* -->
-![The blue Send button on the right of the URL bar](assets/task1_send_request/step8_200OK.png)
+![The blue Send button on the right of the URL bar](assets/task1_send_request/step8_200OK.png "The blue Send button on the right of the URL bar")
 
 ---
 
@@ -172,7 +172,7 @@ Look at the top of the response panel. You should see:
 
 This means the request worked. The server received your request and sent data back.
 
-<!-- ![Response panel showing 200 OK](assets/task1_send_request/step8_200OK.png) -->
+<!-- ![Response panel showing 200 OK](assets/task1_send_request/step8_200OK.png "Response panel showing 200 OK") -->
 <!-- *The status code appears at the top of the response panel. 200 OK means success.* -->
 
 <!-- !!! success
@@ -208,9 +208,8 @@ This means the request worked. The server received your request and sent data ba
    }
    ```
 
-![Response body tab showing JSON data](assets/task1_send_request/step8_200OK.png)
+![Response body tab showing JSON data](assets/task1_send_request/step8_200OK.png "Response body tab showing JSON data")
 <!-- *Click the Body tab in the response panel to see the data the server sent back.* -->
-
 
 
 <!-- !!! success "What does this mean?"
@@ -241,7 +240,7 @@ Saving lets you open and resend the request any time without setting it up again
 
 1. Click the **Save** button at the top right of the request editor, or press ++ctrl+s++ (Windows / Linux) or ++cmd+s++ (macOS).
 2. A **Save Request** dialog opens.
-![Save button at the top right of the request tab](assets/task1_send_request/step9_save.png)
+![Save button at the top right of the request tab](assets/task1_send_request/step9_save.png "Save button at the top right of the request tab")
 <!-- *Click Save or press Ctrl+S / Cmd+S to open the Save Request dialog.* -->
 
 3. Fill in the details:
@@ -249,7 +248,7 @@ Saving lets you open and resend the request any time without setting it up again
    - **Collection:** Click **New Collection**, name it `My First Collection`, and click **Create**. Or select an existing collection.
 4. Click **Save**.
 
-![Save Request dialog with name and collection fields](assets/task1_send_request/step9_newcollection.png)
+![Save Request dialog with name and collection fields](assets/task1_send_request/step9_newcollection.png "Save Request dialog with name and collection fields")
 <!-- *Enter a name for the request and choose a collection to save it in.* -->
 
 Your request now appears in the left sidebar under your collection. Click it any time to reload it.
