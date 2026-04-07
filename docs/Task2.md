@@ -10,11 +10,11 @@ This task walks you through creating an environment, defining variables, and ref
 
 ## Setting Up Environment Variables
 
-1. In the left sidebar, click **Environments** to open the environment management panel.
+1. In the left sidebar, click **"Environments"** to open the environment management panel.
 
     ![Postman UI](assets/task2/navigate_to_environment.jpg)
 
-2. Click the **+** icon to create a new environment collection.
+2. Click the **"+"** icon to create a new environment collection.
 
     ![Postman UI](assets/task2/create_an_environment.jpg)
 
@@ -22,7 +22,7 @@ This task walks you through creating an environment, defining variables, and ref
 
     ![Postman UI](assets/task2/setup_environment.jpg)
 
-4. Add your variables by filling in the **Variable** and **Initial Value** columns. For example:
+4. Add your variables by filling in the **"Variable"** and **"Value"** columns. For example:
 
     | Variable    | Value                        |
     |-------------|------------------------------|
@@ -46,11 +46,11 @@ Next, let’s explore how to use these environment variables inside your request
 ---
 
 ## Using Environment Variables in Requests
-1. Click the **New** button on the right-hand side of the **My Workspace** top bar.
+1. Click the **"New"** button on the right-hand side of the **"My Workspace"** top bar.
 
     ![Postman UI](assets/task2/click_new.jpg)
 
-2. In the dialog that appears, select **HTTP** to create a new HTTP request.
+2. In the dialog that appears, select **"HTTP"** to create a new HTTP request.
 
     ![Postman UI](assets/task2/create_request.jpg)
 
@@ -66,13 +66,13 @@ Next, let’s explore how to use these environment variables inside your request
 {{url}}/get
 ```
 
-    Click **Send**. Postman will substitute `{{url}}` with `https://postman-echo.com` before sending the request. You can confirm the request was sent successfully by the `200 OK` status shown in the response panel.
+    Click **"Send"**. Postman will substitute `{{url}}` with `https://postman-echo.com` before sending the request. You can confirm the request was sent successfully by the `200 OK` status shown in the response panel.
 
     ![Postman UI](assets/task2/setup_in_request.jpg)
     !!! warning
         If the variable is not resolved, double-check that the name inside `{{ }}` exactly matches the variable key defined in your environment, including spelling, capitalization, and special characters (e.g., `{{url}}` and `{{Url}}` are treated as different variables).
 
-5. Navigate to the **Headers** tab. Set the **Key** to `x-api-key` and the **Value** to `{{api_key}}`. Click **Send**.
+5. Navigate to the **"Headers"** tab. Set the **"Key"** to `x-api-key` and the **"Value"** to `{{api_key}}`. Click **"Send"**.
 
     ![Postman UI](assets/task2/set_header.jpg)
 
@@ -83,14 +83,14 @@ Next, let’s explore how to use these environment variables inside your request
     !!! note
         The `{{variable_name}}` syntax works in any field in Postman — URLs, headers, query parameters, and request bodies.
 
-7. Switch the HTTP method to **POST** by clicking the method dropdown on the left of the URL bar and selecting **POST**. Then enter the following in the URL field:
+7. Switch the HTTP method to **"POST"** by clicking the method dropdown on the left of the URL bar and selecting **"POST"**. Then enter the following in the URL field:
 ```
 {{url}}/post
 ```
 
     ![Postman UI](assets/task2/post_request_setup.jpg)
 
-8. In the **Body** tab, click the left dropdown and select **raw**, then click the right dropdown and select **JSON**.
+8. In the **"Body"** tab, click the left dropdown and select **"raw"**, then click the right dropdown and select **"JSON"**.
 
     ![Postman UI](assets/task2/setup_body_json.jpg)
 
@@ -104,7 +104,7 @@ Next, let’s explore how to use these environment variables inside your request
 
     ![Postman UI](assets/task2/post_request_json.jpg)
 
-10. Click **Send**. In the response panel, locate the `data` field and confirm that the environment variables have been resolved to their corresponding values:
+10. Click **"Send"**. In the response panel, locate the `data` field and confirm that the environment variables have been resolved to their corresponding values:
 ```json
 "data": {
     "username": "myName",
