@@ -32,8 +32,8 @@ theme:
 nav:
   - Home: index.md
   - Sending a GET Request: Task1.md
-  - Using Environment Variables : Task2.md
-  - Task 3: Task3.md
+  - Using Environment Variables: Task2.md
+  - Grouping Requests with Collections: Task3.md
   - Managing Collections in Postman: Task4.md
   - Troubleshooting: TroubleShooting.md
   - Glossary: glossary.md
