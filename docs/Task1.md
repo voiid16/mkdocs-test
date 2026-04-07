@@ -6,9 +6,9 @@ In this section, you will send a GET request to the [**Postman Echo**](https://p
 
 This section is organized into three parts:
 
-- **Build the Request** — Create a new request, set the method, enter the URL, and configure the query parameters, body, and headers (Steps 1–6).
-- **Send & Review** — Send the request and read the response (Steps 7–8).
-- **Save the Request** — Save the request to a collection for future use (Step 9).
+- **Build the Request** — Create a new request, set the method, enter the URL, and configure the query parameters, body, and headers.
+- **Send & Review** — Send the request and read the response.
+- **Save the Request** — Save the request to a collection for future use.
 
 By the end of this section, you will know how to send a real HTTP request and understand what the response tells you.
 
@@ -136,19 +136,19 @@ Headers give the server extra information about your request — for example, wh
 
 !!! info
     The `Accept` header tells the server that you want the response in **JSON** format.
-
+<!-- 
 !!! info
-    As you type in the Key field, Postman shows suggestions like `Content-Type` and `Accept`. Click a suggestion to fill it in automatically.
+    As you type in the Key field, Postman shows suggestions like `Content-Type` and `Accept`. Click a suggestion to fill it in automatically. -->
 
 ---
 
 ## Send & Review
 
-This section covers Steps 7–8: sending the request and reading what comes back.
+This section covers Steps 1–2: sending the request and reading what comes back.
 
 ---
 
-**Step 7 — Send the Request**
+**Step 1 — Send the Request**
 
 1. Click the blue **Send** button on the right side of the URL bar.
 2. Postman sends the request to `https://postman-echo.com/get?foo1=bar1&foo2=bar2`.
@@ -159,7 +159,7 @@ This section covers Steps 7–8: sending the request and reading what comes back
 
 ---
 
-**Step 8 — Read the Response**
+**Step 2 — Read the Response**
 
 After you click Send, the **Response** panel appears at the bottom of the screen. Check the **status code** first, then the **body**.
 
@@ -235,7 +235,7 @@ If you see `"foo1": "bar1"` and `"foo2": "bar2"` inside `args`, everything worke
 
 ## Save the Request
 
-**Step 9 — Save the Request**
+**Step 1 — Save the Request**
 
 Saving lets you open and resend the request any time without setting it up again.
 
