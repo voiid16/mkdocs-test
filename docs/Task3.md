@@ -42,7 +42,7 @@ This section covers Steps 1–3: creating the Collection and Folder, setting the
 4. A new collection appears under **COLLECTIONS** with its name highlighted and ready to edit.
 5. Type `Grouping Requests` and press **Enter**.
 
-![New Collection created in the sidebar under COLLECTIONS](assets/task3/newcollection.png)
+![New Collection created in the sidebar under COLLECTIONS](assets/task3/newcollection.png "New Collection created in the sidebar under COLLECTIONS")
 
 <!-- !!! info
     You can also hover over the **COLLECTIONS** heading — a **+** icon appears beside it. Click it to add a new collection directly. -->
@@ -58,7 +58,7 @@ Folders let you group requests by feature or resource type within the same colle
 3. Name the folder `Users`.
 4. Press **Enter** to confirm.
 
-![Add Folder menu option and the new Users folder](assets/task3/newfolder.png)
+![Add Folder menu option and the new Users folder](assets/task3/newfolder.png "Add Folder menu option and the new Users folder")
 
 !!! info
     Use folders to separate different resources or features — for example, a `Users` folder and an `Orders` folder inside the same collection.
@@ -80,7 +80,7 @@ Instead of typing the full URL into every request, you will store the base URL i
 5. Click **Save** (or press ++cmd+s++).
 6. The environment now appears in the **ENVIRONMENTS** section with a **✓** checkmark, meaning it is active. If it does not show a checkmark, click the **⊙** icon to the right of its name to activate it.
 
-![Environment editor showing base_url variable, with Demo Environment active in the sidebar](assets/task3/addvaluetoenv.png)
+![Environment editor showing base_url variable, with Demo Environment active in the sidebar](assets/task3/addvaluetoenv.png "Environment editor showing base_url variable, with Demo Environment active in the sidebar")
 
 !!! info "What is `{{base_url}}`?"
     When you type `{{base_url}}` in a URL field, Postman replaces it with the value you saved in the environment. If the base URL ever changes, you only need to update it in one place.
@@ -103,7 +103,7 @@ In Postman v12, collection-level headers are set using a **pre-request script** 
 
 5. Click **Save** (or press ++ctrl+s++ / ++cmd+s++).
 
-![Collection Scripts tab with pre-request script setting Content-Type header](assets/task3/prerequest.png)
+![Collection Scripts tab with pre-request script setting Content-Type header](assets/task3/prerequest.png "Collection Scripts tab with pre-request script setting Content-Type header")
 
 <!-- !!! info "What does `upsert` mean?"
     `upsert` means **update if it exists, insert if it doesn't**. Using `upsert` is safer than `add` because it won't throw an error if the header is already present on an individual request. -->
@@ -135,7 +135,7 @@ A GET request retrieves data from the server.
     - **Key:** `foo1` — **Value:** `bar1`
 7. Click **Save**.
 
-![GET request with base_url in the URL field and query params added](assets/task3/get.png)
+![GET request with base_url in the URL field and query params added](assets/task3/get.png "GET request with base_url in the URL field and query params added")
 
 !!! info
     Using `{{base_url}}` instead of the full URL means all your requests stay consistent. If the server address changes, update it in the environment — not in every request.
@@ -164,7 +164,7 @@ A POST request sends new data to the server.
    ```
 8. Click **Save**.
 
-![POST request with raw JSON body entered](assets/task3/post.png)
+![POST request with raw JSON body entered](assets/task3/post.png "POST request with raw JSON body entered")
 
 !!! info
     The **Body** tab is where you send data with POST, PUT, and PATCH requests. The `Content-Type: application/json` header you set on the collection automatically tells the server the body is JSON.
@@ -192,7 +192,7 @@ A PUT request replaces existing data on the server.
    ```
 7. Click **Save**.
 
-![PUT request with updated JSON body](assets/task3/put.png)
+![PUT request with updated JSON body](assets/task3/put.png "PUT request with updated JSON body")
 
 !!! info "PUT vs PATCH"
     **PUT** replaces the entire resource with the new data you send.
@@ -215,7 +215,7 @@ A DELETE request removes data from the server.
 5. Leave the **Body** as **none**.
 6. Click **Save**.
 
-![DELETE request with base_url URL and no body](assets/task3/delete.png)
+![DELETE request with base_url URL and no body](assets/task3/delete.png "DELETE request with base_url URL and no body")
 
 !!! info
     DELETE requests typically do not include a body — the URL identifies the resource to remove. Some APIs use a path parameter (for example, `/users/123`) to specify which record to delete.
@@ -241,7 +241,7 @@ The Collection Runner sends all your requests in sequence and records the result
         4. `DELETE - Delete User`
 4. Click the **Run** button to start.
 
-![Collection run configuration tab before clicking Run](assets/task3/runconfig.png)
+![Collection run configuration tab before clicking Run](assets/task3/runconfig.png "Collection run configuration tab before clicking Run")
 <!-- 
 !!! info
     You can drag requests in the run list to reorder them for this run only. This does not affect their order in the collection. -->
@@ -276,7 +276,7 @@ DELETE Users > DELETE - Delete User  https://postman-echo.com/delete           2
 
 Below the summary, each request is listed. Each row shows the method, folder path, request name, URL sent, **status code**, response time, and response size.
 
-![Run results tab showing all four requests with 200 status codes](assets/task3/runresults.png)
+![Run results tab showing all four requests with 200 status codes](assets/task3/runresults.png "Run results tab showing all four requests with 200 status codes")
 
 !!! info "What do the status codes mean?"
 
