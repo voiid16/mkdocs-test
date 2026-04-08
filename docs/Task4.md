@@ -64,57 +64,9 @@ The steps below use the `.json` file exported in the previous section. However, 
 
 Your collection has been successfully imported into your Postman workspace. You can now access all of its saved requests and continue testing your APIs.
 
----
-
-## Running a Collection (Optional)
-
-This section is optional. Running the imported collection is a quick way to verify that it was imported correctly and that all requests execute as expected.
-
-The Collection Runner allows you to execute all requests in a collection sequentially, which is useful for end-to-end testing.
-
-1. In the top bar, click the **"Run collection"** icon (the arrow display icon).
-
-    ![Run Collection Icon](assets/task4/11.png "Click the Run collection icon to open the Collection Runner")
-
-2. The **"Runner"** tab will open. In the **"Run Sequence"** panel, select the requests you want to include, then click **"Run [your collection name]"** in the bottom-right corner.
-
-    ![Collection Runner Setup](assets/task4/12.png "Select requests and run the collection")
-
-3. Postman will execute each selected request in order. Once complete, the results panel will display the status of every request.
-
-    ![Collection Runner Results](assets/task4/13.png "View the results of each request in the runner")
-
-!!! warning
-    If any requests fail, check whether they reference environment or collection variables. Variable names highlighted in red indicate that the variable is undefined or not applied. Refer to the [Collection Variable Errors](#collection-variable-errors) section below to resolve this.
-
----
-
-## Collection Variable Errors
-
-If a collection runner fails or a request behaves unexpectedly, the issue may be related to misconfigured variables. There are two types of variables to check.
-
-**Environment variables** are configured at the workspace level. Refer to [Setting Up Environment Variables](Task2.md/#setting-up-environment-variables) for instructions on setting up environment variables.
-
-**Collection-level variables** are scoped to a specific collection and are configured as follows:
-
-1. A variable name displayed with a red background in the request editor indicates that it is not currently defined or active.
-
-    ![Undefined Variable Highlight](assets/task4/14.png "Variable highlighted in red indicates it is undefined")
-
-2. Click your collection name in the sidebar, then select the **"Variables"** tab. Ensure that the checkbox next to each variable you are using is ticked. In the example below, `base_url` was unchecked — checking it resolves the issue.
-
-    ![Collection Variables Tab](assets/task4/15.png "Enable collection variables in the Variables tab")
-
-3. Return to the request. The variable name should now appear in blue, indicating it is correctly resolved. Re-run the request to confirm it executes successfully.
-
-    ![Resolved Variable](assets/task4/16.png "Variable turns blue when it is correctly resolved")
-
----
-
 ## Conclusion
 
 After completing this task, you should be able to:
 
 - **Export a collection** as a `.json` file for sharing or backup
 - **Import a collection** from a local file into any Postman workspace
-- **Diagnose variable errors** by checking both environment and collection-level variable configurations
