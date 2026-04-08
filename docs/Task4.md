@@ -1,4 +1,4 @@
-# Task 4 — Managing Collections in Postman
+# Managing Collections in Postman
 
 ## Overview
 
@@ -32,8 +32,8 @@ Click it to open the context menu, then hover over **"More"** and select **"Expo
 
     ![Save Exported Collection](assets/task4/5.png "Choose a location and save the exported collection file")
 
-!!! success
-    Your collection has been exported as a `.json` file and is ready to be shared or imported into another Postman workspace. Keep this file handy — you will use it in the next section.
+
+Your collection has been exported as a `.json` file and is ready to be shared or imported into another Postman workspace. Keep this file handy — you will use it in the next section.
 
 ---
 
@@ -61,8 +61,8 @@ The steps below use the `.json` file exported in the previous section. However, 
 
     ![Imported Collection Sidebar](assets/task4/10.png "View the imported collection in the sidebar")
 
-!!! success
-    Your collection has been successfully imported into your Postman workspace. You can now access all of its saved requests and continue testing your APIs.
+
+Your collection has been successfully imported into your Postman workspace. You can now access all of its saved requests and continue testing your APIs.
 
 ---
 
@@ -93,7 +93,7 @@ The Collection Runner allows you to execute all requests in a collection sequent
 
 If a collection runner fails or a request behaves unexpectedly, the issue may be related to misconfigured variables. There are two types of variables to check.
 
-**Environment variables** are configured at the workspace level. Refer to [Task 2](#) for instructions on setting up environment variables.
+**Environment variables** are configured at the workspace level. Refer to [Setting Up Environment Variables](Task2.md/#setting-up-environment-variables) for instructions on setting up environment variables.
 
 **Collection-level variables** are scoped to a specific collection and are configured as follows:
 
@@ -117,5 +117,4 @@ After completing this task, you should be able to:
 
 - **Export a collection** as a `.json` file for sharing or backup
 - **Import a collection** from a local file into any Postman workspace
-- **Run a collection** using the Collection Runner to execute multiple requests sequentially
 - **Diagnose variable errors** by checking both environment and collection-level variable configurations
