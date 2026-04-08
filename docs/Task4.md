@@ -10,7 +10,7 @@ Collections allow you to group, organize, and share related API requests. This t
 
 Exporting a collection produces a JSON file that can be shared with teammates or stored in version control, making it easy to synchronize API workflows across different environments and team members.
 
-1. In the left sidebar, click **"Collections"** and locate the collection you wish to export. In this example, we will use the **REST API basics: CRUD, test & variable** collection — feel free to use whichever collection you currently have. If you do not have a collection yet, refer to [Task 3](Task3.md/#set-up) to create one first.
+1. In the left sidebar, click **"Collections"** and locate the collection you wish to export. In this example, we will use the **REST API basics: CRUD, test & variable** collection — feel free to use whichever collection you currently have. If you do not have a collection yet, refer to [Grouping Requests with Collections](Task3.md/#set-up) to create one first.
 
     ![Collections Sidebar](assets/task4/1.png "Open the Collections panel in the sidebar")
 
