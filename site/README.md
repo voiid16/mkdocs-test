@@ -54,20 +54,6 @@ We loosely followed the [Google Developer Documentation Style Guide](https://dev
 
 ---
 
-## Project Structure
-```
-  docs/
-  │
-  ├── index.md               # Introduction and overview
-  ├── Task1.md               # Sending a GET request
-  ├── Task2.md               # Using environment variables
-  ├── Task3.md               # Grouping requests with collections
-  ├── Task4.md               # Managing collections
-  ├── glossary.md            # Glossary of technical terms
-  └── TroubleShooting.md     # Common problems and solutions
-```
----
-
 ## Intended Audience
 
 This guide is written for:
