@@ -81,7 +81,7 @@ Next, let’s explore how to use these environment variables inside your request
 
     ![Verify API Key Header](assets/task2/img_11.png "Confirm the API key value in the response")
 
-    !!! note
+    !!! tip
         The `{{variable_name}}` syntax works in any field in Postman — URLs, headers, query parameters, and request bodies.
 
 7. Switch the HTTP method to **"POST"** by clicking the method dropdown on the left of the URL bar and selecting **"POST"**. Then enter the following in the URL field:
@@ -109,8 +109,9 @@ Next, let’s explore how to use these environment variables inside your request
 
     ![Verify POST Response Data](assets/task2/img_15.png "Confirm variables are resolved in the response")
 
-    !!! success
-        Seeing your variable values reflected in the `data` field of the response confirms that Postman is correctly resolving environment variables in the POST request body.
+
+Seeing your variable values reflected in the `data` field of the response confirms that Postman is correctly resolving environment variables in the POST request body.
+
 ---
 
 ## Conclusion
