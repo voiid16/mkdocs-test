@@ -52,16 +52,16 @@ To follow the tasks in this guide, users must have:
 This guide is organized into several hands‑on tasks that introduce Postman's core features:
 
 1. **Task 1 — Sending a Basic GET Request**  
-   Learn how to send your first request and read the response.
+   Learn how to create and send your first HTTP request, read the server response, and save the request for future use.
 
 2. **Task 2 — Using Environment Variables**  
-   Understand how to create and use environment variables in your project.
+   Learn how to create an environment, define reusable variables, and reference them across URLs, headers, and request bodies.
 
-3. **Task 3 — Using Collections to Organize API Requests**  
-   Learn how to save, group, and reuse requests efficiently.
+3. **Task 3 — Grouping Requests with Collections**  
+   Learn how to organize related requests into a collection, share configuration across requests using variables, and run a full CRUD workflow with the Collection Runner.
 
 4. **Task 4 — Managing Collections**  
-    Learn how to export, import, and run collections, and how to troubleshoot variable‑related errors.
+   Learn how to export a collection as a JSON file, import it into another workspace, and troubleshoot collection and environment variable errors.
 
 Each task builds on the previous one, allowing beginners to gradually develop confidence using Postman.
 
