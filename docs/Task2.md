@@ -11,12 +11,12 @@ This task walks you through creating an environment, defining variables, and ref
 ## Setting Up Environment Variables
 
 1. In the left sidebar, click **"Environments"** to open the environment management panel.
-![Postman Environment Page](assets/task2/1.png "Open the Environments panel")
+    ![Postman Environment Page](assets/task2/1.png "Open the Environments panel")
 
 
 2. Click the **"+"** icon to create a new environment collection.
 
-![Create Environment Collection](assets/task2/2.png "Click the plus icon to create a new environment")
+    ![Create Environment Collection](assets/task2/2.png "Click the plus icon to create a new environment")
 
 3. Enter a descriptive name for your environment (e.g., `Postman Example Env`).
 
@@ -85,33 +85,27 @@ Next, let’s explore how to use these environment variables inside your request
         The `{{variable_name}}` syntax works in any field in Postman — URLs, headers, query parameters, and request bodies.
 
 7. Switch the HTTP method to **"POST"** by clicking the method dropdown on the left of the URL bar and selecting **"POST"**. Then enter the following in the URL field:
-```
-{{url}}/post
-```
+    ```
+    {{url}}/post
+    ```
 
- ![Setup POST Request](assets/task2/12.png "Change method to POST and set the request URL")
+    ![Setup POST Request](assets/task2/12.png "Change method to POST and set the request URL")
 
 8. In the **"Body"** tab, click the left dropdown and select **"raw"**, then click the right dropdown and select **"JSON"**.
 
     ![Set Body to JSON](assets/task2/13.png "Configure the request body as raw JSON")
 
 9. Paste the following JSON into the body input field:
-```json
-{
-  "username": "{{user_name}}",
-  "role": "{{user_role}}"
-}
-```
+    ```json
+    {
+        "username": "{{user_name}}",
+        "role": "{{user_role}}"
+    }
+    ```
 
     ![POST Request JSON Body](assets/task2/14.png "Insert JSON body using environment variables")
 
 10. Click **"Send"**. In the response panel, locate the `data` field and confirm that the environment variables have been resolved to their corresponding values:
-```json
-"data": {
-    "username": "myName",
-    "role": "Developer"
-}
-```
 
     ![Verify POST Response Data](assets/task2/15.png "Confirm variables are resolved in the response")
 
