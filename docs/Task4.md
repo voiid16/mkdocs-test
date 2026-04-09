@@ -63,9 +63,13 @@ The steps below use the `.json` file exported in the previous section. However, 
 
 Your collection has been successfully imported into your Postman workspace. You can now access all of its saved requests and continue testing your APIs.
 
+---
+
 ## Conclusion
 
 After completing this task, you should be able to:
 
 - **Export a collection** as a `.json` file for sharing or backup
 - **Import a collection** from a local file into any Postman workspace
+
+Managing collections effectively is essential for collaborating across teams and maintaining consistent API workflows. As your projects grow, being able to transfer, reuse, and troubleshoot collections will help you work more efficiently and avoid configuration errors.
