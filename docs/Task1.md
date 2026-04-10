@@ -2,7 +2,7 @@
 
 ## Overview
 
-In this section, you will send a GET request to the [**Postman Echo**](https://postman-echo.com/) API.
+In this section, you will send a GET request to the [**Postman Echo**](./glossary.md) API.
 
 This section is organized into three parts:
 
@@ -12,31 +12,30 @@ This section is organized into three parts:
 
 By the end of this section, you will know how to send a real HTTP request and understand what the response tells you.
 
-!!! info "What is a GET request?"
-    A GET request asks a server to **send you data**. It is the most common type of HTTP request — like asking a website to show you a page.
+<!-- !!! info "What is a GET request?"
+    A GET request asks a server to **send you data**. It is the most common type of HTTP request — like asking a website to show you a page. -->
 
-!!! info "What is Postman Echo?"
-    Postman Echo is a simple API provided by Postman for testing HTTP requests.
+<!-- !!! info "What is Postman Echo?"
+    Postman Echo is a simple API provided by Postman for testing HTTP requests. -->
 
 ---
 
 ## Build the Request
 
-This section covers Steps 1–6: creating the request, choosing the method, entering the URL, and configuring the params, body, and headers.
+This section covers steps including creating the request, choosing the method, entering the URL, and configuring the params, body, and headers.
 
 ---
 
 **Step 1 — Create a New Request**
 
-1. Open the **Postman desktop app**.
-2. Click the **+** button at the top of the screen to open a new tab.
-3. A blank request editor opens.
+1. Open the **Postman desktop app** and click the **+** button at the top of the screen to open a new tab. 
+<!-- A blank request editor opens. -->
 
 <!-- *Click the + button at the top of the Postman workspace to open a new request tab.* -->
 ![Click the + button to open a new tab](assets/task1_send_request/step1_newtab.png "Click the + button to open a new tab")
 
-!!! info
-    You can also press ++ctrl+t++ (Windows / Linux) or ++cmd+t++ (macOS) to open a new tab.
+<!-- !!! info
+    You can also press ++ctrl+t++ (Windows / Linux) or ++cmd+t++ (macOS) to open a new tab. -->
 
 ---
 
