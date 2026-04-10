@@ -12,6 +12,7 @@ Before we begin, here are a few terms you will encounter throughout this guide. 
 | **RESTful API** | A common style of API that uses URLs and HTTP methods to access resources. | [Learn more](https://restfulapi.net/) |
 | **HTTP Request** | A message sent from a client to a server, such as `GET` or `POST`. | [Learn more](https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods) |
 | **JSON** (JavaScript Object Notation) | A lightweight data format often used in API requests and responses. | [Learn more](https://www.json.org/json-en.html) |
+| **CRUD** | An acronym for the four basic data operations: Create, Read, Update, and Delete. | [Learn more](https://developer.mozilla.org/en-US/docs/Glossary/CRUD) |
 
 If these concepts sound familiar — or you can quickly review them using the links above — you are ready to start using Postman.
 
