@@ -205,7 +205,7 @@ By the end of this section, you will have successfully learned the following:
 - How to create a Collection and organize requests inside a Folder.
 - How to use `{{base_url}}` to manage the server address in one place.
 - How to set shared headers at the collection level.
-- How to build GET, POST, PUT, and DELETE requests that cover a full CRUD workflow.
+- How to build **GET**, **POST**, **PUT**, and **DELETE** requests that cover a full CRUD workflow.
 - How to use the Collection Runner to execute and verify all requests at once.
 
 Congratulations! You have built and run your first complete CRUD API workflow in Postman.
