@@ -49,7 +49,9 @@ To follow the tasks in this guide, users must have:
 
 ## Overview of Tasks
 
-This guide is organized into several hands‑on tasks that introduce Postman's core features:
+This guide is organized into several hands‑on tasks that introduce Postman's core features.
+Each task builds on the previous one, allowing beginners to gradually develop confidence using Postman.
+
 
 1. **Task 1 — Sending a Basic GET Request**  
    Learn how to create and send your first HTTP request, read the server response, and save the request for future use.
@@ -63,7 +65,6 @@ This guide is organized into several hands‑on tasks that introduce Postman's c
 4. **Task 4 — Managing Collections**  
    Learn how to export a collection as a JSON file, import it into another workspace, and troubleshoot collection and environment variable errors.
 
-Each task builds on the previous one, allowing beginners to gradually develop confidence using Postman.
 
 
 ## Typographical Conventions
@@ -75,6 +76,8 @@ To improve clarity, this guide uses the following formatting conventions:
 | **"UI Component"** | Buttons, menu items, input fields, and other interactive elements | Select **"Send"**, then open **"Headers"** |
 | **Bold text** | Important technical terms or concepts | A **RESTful API** uses standard HTTP methods |
 | `Monospace` | Code, JSON, URLs, variable names, and command-line text | `https://api.example.com/users` |
+
+## Admonition
 
 The following admonition blocks are used throughout this guide to draw your attention to important information:
 
