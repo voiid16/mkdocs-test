@@ -37,11 +37,8 @@ We built this documentation site using [MkDocs](https://www.mkdocs.org/) with th
 
 All pages are written in Markdown. We used MkDocs' admonition syntax to visually distinguish different types of callouts:
 
-- `!!! note` — Helpful tips and reminders
-- `!!! warning` — Cautions to prevent errors
-- `!!! tip` — Practical advice for working more efficiently
-- `!!! success` — Confirmation that a step completed correctly
-- `!!! failure` — Common mistakes to watch out for
+- `!!! info` — Helpful tips, explanations, or additional context to support your understanding  
+- `!!! warning` — Cautions to help prevent errors or unintended behavior
 
 ### Using a Style Guide
 

@@ -117,7 +117,7 @@ Adding GET, POST, PUT, and DELETE requests inside the Users folder helps demonst
 
     ![POST request with raw JSON body entered](assets/task3/post.png "POST request with raw JSON body entered")
 
-    !!! info
+    !!! info "Sending Data with the Body Tab"
         The **Body** tab is where you send data with POST, PUT, and PATCH requests. The `Content-Type: application/json` header you set on the collection automatically tells the server the body is JSON.
 
 3. Add a **PUT** Request (Update)
@@ -193,7 +193,7 @@ Each request is listed. Each row shows the method, folder path, request name, UR
 
 ![Run results tab showing all four requests with 200 status codes](assets/task3/runresults.png "Run results tab showing all four requests with 200 status codes")
 
-!!! info
+!!! info "Managing Request Runs"
     To re-run, click **New Run** in the top-right corner of the results tab. To view past runs, click **View all runs**.
 
 ---
