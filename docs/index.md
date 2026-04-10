@@ -82,17 +82,8 @@ To improve clarity, this guide uses the following formatting conventions:
 
 The following admonition blocks are used throughout this guide to draw your attention to important information:
 
-!!! note
-    Helpful tips or reminders to support your understanding.
+!!! info
+    Helpful tips, explanations, or additional context to support your understanding.
 
 !!! warning
-    Important cautions to prevent errors or unintended behavior.
-
-!!! tip
-    Practical advice to help you work more efficiently.
-
-!!! important
-    Key information you should not overlook.
-
-!!! failure
-    Common mistakes or potential failures to watch out for.
+    Important cautions to help prevent errors or unintended behavior.
