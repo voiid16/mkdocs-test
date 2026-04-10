@@ -10,7 +10,7 @@ This task walks you through creating an environment, defining variables, and ref
 
 ## Setting Up Environment Variables
 
-1. In the left sidebar, click the **"+"** icon to open the panel.
+1. Click the **"+"** icon in the left sidebar to open the panel.
     ![Postman Environment Page](assets/task2/img_1.png "Open the Environments panel")
 
 
@@ -22,7 +22,9 @@ This task walks you through creating an environment, defining variables, and ref
 
     ![Name the Environment](assets/task2/img_3.png "Enter a name for the environment")
 
-4. Add your variables by filling in the **"Variable"** and **"Value"** columns. For example:
+4. Add your variables by filling in the **"Variable"** and **"Value"** columns.
+
+    For example:
 
     | Variable    | Value                        |
     |-------------|------------------------------|
@@ -33,12 +35,14 @@ This task walks you through creating an environment, defining variables, and ref
 
     ![Add Environment Variables](assets/task2/img_4.png "Add variables and values to the environment")
 
-5. Optionally, assign a tag color to your environment for easier identification when switching between multiple environments.
+5. Click the input box to assign a tag color to your environment.
+
+    It is for easier identification when switching between multiple environments.
 
     ![Environment Tag Color](assets/task2/img_5.png "Assign a color tag to the environment")
 
 With this step completed, your environment is now fully configured.  
-You have successfully created an Environment, added variables, and customized its appearance for easier identification.
+You have successfully created an environment, added variables, and customized its appearance for easier identification.
 
 Next, let’s explore how to use these environment variables inside your requests.
 
@@ -50,16 +54,18 @@ Next, let’s explore how to use these environment variables inside your request
 
     ![Create New Request](assets/task2/img_6.png "Click the New button to create a request")
 
-2. In the menu that appears, select **"HTTP"** to create a new HTTP request.
+2. Select **"HTTP"** in the menu that appears to create a new HTTP request.
 
     ![Select HTTP Request](assets/task2/img_7.png "Choose HTTP to create a new request")
 
-3. In the top-right dropdown, select the environment you created (e.g., `Postman Example Env`). Postman will resolve all `{{variable}}` references using the values defined in that environment.
+3. Select the environment you created (e.g., `Postman Example Env`) in the top-right dropdown. 
+    
+    Postman will resolve all `{{variable}}` references using the values defined in that environment.
 
     ![Select Environment](assets/task2/img_8.png "Select the environment for the request")
 
     !!! warning
-        If no environment is selected, Postman will not resolve any `{{variable}}` references and the raw placeholder text will be sent in the request instead.
+        If no environment is selected, Postman will not resolve any `{{variable}}` references, and the raw placeholder text will be sent in the request instead.
 
 4. In the URL field, enter the following using the `{{variable_name}}` syntax:
 ```
@@ -73,29 +79,35 @@ Next, let’s explore how to use these environment variables inside your request
     !!! warning
         If the variable is not resolved, double-check that the name inside `{{ }}` exactly matches the variable key defined in your environment, including spelling, capitalization, and special characters (e.g., `{{url}}` and `{{Url}}` are treated as different variables).
 
-5. Navigate to the **"Headers"** tab. Set the **"Key"** to `x-api-key` and the **"Value"** to `{{api_key}}`. Click **"Send"**.
+5. Navigate to the **"Headers"** tab.
+6. Set the **"Key"** to `x-api-key` and the **"Value"** to `{{api_key}}`.
+7. Click **"Send"**.
 
     ![Set Header API Key](assets/task2/img_10.png "Add x-api-key header using environment variable")
 
-6. In the response panel, locate the `x-api-key` field and confirm it contains the value you defined in your environment variable.
+8. Locate the `x-api-key` field in the response panel, and confirm it contains the value you defined in your environment variable.
 
     ![Verify API Key Header](assets/task2/img_11.png "Confirm the API key value in the response")
 
-    !!! tip
+    !!! info
         The `{{variable_name}}` syntax works in any field in Postman — URLs, headers, query parameters, and request bodies.
 
-7. Switch the HTTP method to **"POST"** by clicking the method dropdown on the left of the URL bar and selecting **"POST"**. Then enter the following in the URL field:
+9. Click the method dropdown on the left of the URL bar.
+10. Select **"POST"** to switch the HTTP method to **POST**.
+11. Enter the following in the URL field:
     ```
     {{url}}/post
     ```
 
     ![Setup POST Request](assets/task2/img_12.png "Change method to POST and set the request URL")
 
-8. In the **"Body"** tab, click the left dropdown and select **"raw"**, then click the right dropdown and select **"JSON"**.
+12. Click on **"Body"** tab.
+13. Select **"raw"** in the left dropdown menu
+14. Select **"JSON"** in the right dropdown menu.
 
     ![Set Body to JSON](assets/task2/img_13.png "Configure the request body as raw JSON")
 
-9. Paste the following JSON into the body input field:
+11. Paste the following JSON into the body input field:
     ```json
     {
         "username": "{{user_name}}",
@@ -105,7 +117,9 @@ Next, let’s explore how to use these environment variables inside your request
 
     ![POST Request JSON Body](assets/task2/img_14.png "Insert JSON body using environment variables")
 
-10. Click **"Send"**. In the response panel, locate the `data` field and confirm that the environment variables have been resolved to their corresponding values:
+12. Click **"Send"**.
+    
+    In the response panel, locate the `data` field and confirm that the environment variables have been resolved to their corresponding values:
 
     ![Verify POST Response Data](assets/task2/img_15.png "Confirm variables are resolved in the response")
 
